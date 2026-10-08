@@ -1,0 +1,4 @@
+Options -Indexes
+<FilesMatch "^env(\.example)?\.php$">
+Require all denied
+</FilesMatch>

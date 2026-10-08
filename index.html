@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Maske</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="auth" class="view" hidden>
+  <form id="authForm">
+    <h1>Maske</h1>
+    <p class="lead">Herkesin yüzü gizli, sohbet açık.</p>
+    <div class="tabs" id="authTabs">
+      <button type="button" data-mode="login" class="on">Giriş yap</button>
+      <button type="button" data-mode="register">Kayıt ol</button>
+    </div>
+    <input id="u" placeholder="Kullanıcı adı" autocomplete="username" required>
+    <input id="p" type="password" placeholder="Şifre" autocomplete="current-password" required>
+    <p id="authErr" class="err"></p>
+    <button class="primary" id="authBtn">Giriş yap</button>
+  </form>
+</section>
+
+<section id="maint" class="view" hidden>
+  <div id="maintBox">
+    <h1>Bakımdayız</h1>
+    <p id="maintText" class="lead"></p>
+    <button id="maintAdmin" type="button">Yönetici girişi</button>
+  </div>
+</section>
+
+<section id="chat" class="view" hidden>
+  <header>
+    <div>
+      <strong>Maske</strong>
+      <span id="who"></span>
+    </div>
+    <div class="bar">
+      <span id="online"></span>
+      <button id="adminBtn" hidden>Yönetim</button>
+      <button id="logout">Çıkış</button>
+    </div>
+  </header>
+  <div id="list"></div>
+  <form id="send">
+    <input id="text" placeholder="Bir şey yaz" maxlength="500" autocomplete="off">
+    <button class="primary">Gönder</button>
+  </form>
+</section>
+
+<dialog id="admin">
+  <div class="dhead">
+    <div class="tabs" id="adminTabs">
+      <button data-tab="stats" class="on">Özet</button>
+      <button data-tab="users">Kullanıcılar</button>
+      <button data-tab="msgs">Mesajlar</button>
+    </div>
+    <button id="closeAdmin">Kapat</button>
+  </div>
+  <div id="adminBody"></div>
+</dialog>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
